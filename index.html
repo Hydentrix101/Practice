@@ -1,169 +1,274 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enjoy!</title>
-    <link href="https://fonts.googleapis.com/css?family=Roboto
-    :400,700&display=swap" rel="stylesheet">
+    <title>EEE GPA calculator</title>
+        <style>
+            body{
+                background:
+                linear-gradient(to right, black 0%,blue 50%, black 100%);
+                background-size:200% 100%;
+                color: aqua;
+                text-align: center;
+                animation: move 6s infinite;
+ }
+            @keyframes move {
+                0% {
+                 background-position:0% 50%;
+                }
+                50% {
+                background-position:100% 50%
+                }
+               100%{
+                    background-position:0% 50%;
+                    }
+            }
+            
+            header{
+            text-align: center;
+           margin: 10px;
+           font-size: 20px;
+           background-color: aqua;
+           color:black;
+           border-radius :20px;
+             }
+             button{
+                 font-size: 30px;
+                  margin: 70px;
+                  background-color:#55ff58;
+                  color:black;         
+             }
+             button:hover{
+                 font-size: 30px;
+                 color: blue; 
+                 background-color: #00ff2d;
+                 margin: 70px;
+                 border-radius :20px;
+                 transition-duration:1s;
+             }
+             
+             .table table{   
+              position: relative;
+              left: 70px;
+              scale:1.2;
+              border:white 2px solid;
+             }                               
+               
+             p{
+               font-size:20px;
+               background: green ;
+               color:white;
+               background-size:70%;
+               display:inline;
+      }
+      .point{
+          font-size:30px;
+      }
+        </style>
 </head>
-<style>
-
-    body {
-        background: linear-gradient(135deg, #ffb347 0%, #ffcc33 100%);
-        color: rgb(70, 51, 51);
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        min-height: 100vh;
-    }
-
-    h1{
-text-align: center;
-margin-top: 10px;
-font-weight: 700;
-color: rgb(74, 59, 59);
-    }
-
-    .container{
-        background: beige; max-width: 350px;
-        margin: auto;
-        padding: 32px; 
-        border-radius: 16px;
-        box-shadow:0 4px 24px rgba(0,0,0,0.08);
-        text-align: center;
-    }
-
-    label{
-        display: block;
-        margin-bottom: 8px;
-        font-weight: 600;
-        color: rgb(91, 84, 69);
-    }
-    input[type="text"],select{
-        width: 90%;
-        padding: 10px;
-        margin-bottom: 18px;
-        border: 1px solid rgb(232, 173, 11);
-        border-radius: 8px;
-        font-size: 1em;
-        outline:none;
-        transition: border 0.2s;
-    }
-
-    input[type="text"]:focus,select:focus{
-        border: 1.5px solid orange;
-        
-    }
-
-    input[type="submit"]{
-        background: orange;
-        color: white;
-        font-weight:bold;
-        border: none;
-        padding: 12px 32px;
-        border-radius: 8px;
-        font-size: 1em;
-        cursor:pointer;
-        margin-top: 10px ;
-    }
-
-    input[type="submit"]:hover{
-        background: #ffb347;
-        color: green;
-        transition-duration: 1s;
-    }
-
-    form{
-        background: transparent;
-        box-shadow: none;
-        padding: 0;
-    }
-    .opt{
-        color: yellow;
-    }
-    .opt2{
-        color: green;
-    }
-    .opt3{
-        color: red;
-    }
-    input[type="text"]:hover,select:hover{
-        border: green solid;
-        transition-duration: 1s;
-    }
-    footer{
-        text-align: center;
-        margin-top: 10px;
-    }
-    </style>
-
 <body>
-    <header>
-        <h1 id="sorry">Hope you enjoy this as much as i did</h1>
-    </header>
+    <header><h1>EEE GPA Calculator</h1></header><br>
+    <h2>Based on 100 level first semester course form</h2>
+    <br> <br> <br>
     <main>
-        <div class="container">
-            <form id="form" onsubmit="Elash() ; return false;">
-                <label for = "no.">Phone number</label>
-                <input type="text" id="no." placeholder="080********" name="Phone number" value="" required>
-                
-                <br> <br>
-                <label for="net">Network</label>
-                <select id="net" name="Network" onchange="changecolor()" required>
-                    
-                    <option value="" disabled selected>Select Network</option>
-                    <option value="MTN" class="opt">MTN</option>
-                    <option value="GLO" class="opt2">GLO</option>
-                    <option value="AIRTEL" class="opt3">AIRTEL</option>
-                </select>  <br>
-                <p id="warning"></p>
-                <br> <br>
-                <input type="submit" value="Get Card">
-            </form>
+     <div class="table">
+        <table border="3px" color="aqua" cellspacing="2px" cellpadding="10px">
+            <tr>
+                <th>Course</th>
+                <th>Unit</th>
+                <th>Grade</th>
+            </tr>
+            <tr>
+                <td>GST 111</td>
+                <td>2</td>
+                <td>
+                    <select id="G1">
+                        <option disabled>select                  grade</option>
+                        <option></option>
+                        <option value="5" id="A">A</option>
+                        <option value="4" id="B">B</option>
+                        <option value="3" id="C">C</option>
+                        <option value="2" id="D">D</option>
+                        <option value="1" id="F">F</option>   
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>GET 101</td>
+                <td>1</td>
+                <td>
+                    <select id="G2">
+                        <option disabled>select                  grade</option>
+                        <option></option>
+                        <option value="5" id="A">A</option>
+                        <option value="4" id="B">B</option>
+                        <option value="3" id="C">C</option>
+                        <option value="2" id="D">D</option>
+                        <option value="1" id="F">F</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>CHM 101</td>
+                <td>2</td>
+                <td>
+                    <select id="G3">
+                        <option disabled>select                  grade</option>
+                        <option></option>
+                        <option value="5" id="A">A</option>
+                        <option value="4" id="B">B</option>
+                        <option value="3" id="C">C</option>
+                        <option value="2" id="D">D</option>
+                        <option value="1" id="F">F</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>CHM 107</td>
+                <td>1</td>
+                <td>
+                    <select id="G4">
+                        <option disabled>select                  grade</option>
+                        <option></option>
+                        <option value="5" id="A">A</option>
+                        <option value="4" id="B">B</option>
+                        <option value="3" id="C">C</option>
+                        <option value="2" id="D">D</option>
+                        <option value="1" id="F">F</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>MTH 101</td>
+                <td>2</td>
+                <td>
+                    <select id="G5">
+                        <option disabled>select                  grade</option>
+                        <option></option>
+                        <option value="5" id="A">A</option>
+                        <option value="4" id="B">B</option>
+                        <option value="3" id="C">C</option>
+                        <option value="2" id="D">D</option>
+                        <option value="1" id="F">F</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>PHY 101</td>
+                <td>2</td>
+                <td>
+                    <select id="G6">
+                        <option disabled>select                  grade</option>
+                        <option></option>
+                        <option value="5" id="A">A</option>
+                        <option value="4" id="B">B</option>
+                        <option value="3" id="C">C</option>
+                        <option value="2" id="D">D</option>
+                        <option value="1" id="F">F</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>PHY 103</td>
+                <td>2</td>
+                <td>
+                    <select id="G7">
+                        <option disabled>select                  grade</option>
+                        <option></option>
+                        <option value="5" id="A">A</option>
+                        <option value="4" id="B">B</option>
+                        <option value="3" id="C">C</option>
+                        <option value="2" id="D">D</option>
+                        <option value="1" id="F">F</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>PHY 107</td>
+                <td>1</td>
+                <td>
+                    <select id="G8">
+                        <option disabled>select                  grade</option>
+                        <option></option>
+                        <option value="5" id="A">A</option>
+                        <option value="4" id="B">B</option>
+                        <option value="3" id="C">C</option>
+                        <option value="2" id="D">D</option>
+                        <option value="1" id="F">F</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>FMEE 101</td>
+                <td>2</td>
+                <td>
+                    <select id="G9">
+                        <option disabled>select                  grade</option>
+                        <option></option>
+                        <option value= "5" id="A">A</option>
+                        <option value= "4" id="B">B</option>
+                        <option value= "3" id="C">C</option>
+                        <option value= "2" id="D">D</option>
+                        <option value= "1" id="F">F</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>FMTS 103</td>
+                <td>2</td>
+                <td>
+                    <select id="G10">
+                        <option disabled>select                  grade</option>
+                        <option></option>
+                        <option value="5" id="A">A</option>
+                        <option value="4" id="B">B</option>
+                        <option value="3" id="C">C</option>
+                        <option value="2" id="D">D</option>
+                        <option value="1" id="F">F</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>FGNS 103</td>
+                <td>1</td>
+                <td>
+                    <select id="G11">
+                        <option disabled>select grade   </option>                      
+                        <option></option>
+                        <option value= "5" id="A">A</option>
+                        <option value= "4" id="B">B</option>
+                        <option value= "3" id="C">C</option>
+                        <option value= "2" id="D">D</option>
+                        <option value= "1" id="F">F</option>
+              </select>
+                </td>
+            </tr>
+        </table>
         </div>
-    </main> 
-    <footer>
-        &copy;Charity from Knowledge
-    </footer>
-    <br>
-    <script>
-        alert(
-            'Put in you details and enjoy!'
-        )
-        function Elash(){
-            let name = document.getElementById("no.").value;
-            let net = document.getElementById("net").value;
-            document.getElementById("warning").innerText = "Hmm you think say you don win jackpot abi, load am first maybe they no go block your account";
-            document.getElementById('warning').style.color = 'red'
-            document.getElementById('warning').style.fontSize = '20px'
-            document.getElementById('sorry').innerHTML = 'Sorry!'
-            document.getElementById('sorry').style.color = 'red';
-            const code = document.getElementById("net")
-            if (code.value === "MTN")
-            alert(
-                name + ' ' + 'Your' + ' '+ net + ' ' +   'line card is *311*09876888975543#'
-            );
-            else if (code.value === "GLO") 
-            alert(
-                name + ' ' + 'Your' + ' '+ net + ' ' +   'line card is *311*34176883452543#'
-            );
-            else if (code.value === "AIRTEL")
-            alert(
-                name + ' ' + 'Your' + ' '+ net + ' ' +   'line card is *311*09876548970743#'
-            );
-        }
-        function changecolor(){
-            const net = document.getElementById("net");
-            if (net.value === "MTN") net.style.color = "yellow";
-            else if (net.value === "GLO") net.style.color = "green";
-            else if (net.value === "AIRTEL") net.style.color = "red";
-            else net.style.color = "black"
-            document.getElementById("net").style.color = document.getElementById("net").style.color;
-            document.getElementById("warning").innerHTML = 'The amount received in the card is random, let`s see how lucky you`ll be!';
-            document.getElementById("warning").style.color = 'green'
-            document.getElementById("warning").style.fontSize = '20px'
-        }
-    </script>
+            <button onclick="press()">Calculate</button>
+       <br>
+        <div     id="t"><p id="result" class="point"></p></div>
+    </main>
 </body>
+<script>
+    function press() {
+const G1 = Number(document.getElementById("G1").value);
+const G2 = Number(document.getElementById("G2").value);
+const G3 = Number(document.getElementById("G3").value);
+const G4 = Number(document.getElementById("G4").value);
+const G5 = Number(document.getElementById("G5").value);
+const G6 = Number(document.getElementById("G6").value);
+const G7 = Number(document.getElementById("G7").value);
+const G8 = Number(document.getElementById("G8").value);
+const G9 = Number(document.getElementById("G9").value);
+const G10 = Number(document.getElementById("G10").value);
+const G11 = Number(document.getElementById("G11").value);
+let result = document.getElementById("result");
+let GPA = G1 * 2 + G2 * 1 + G3 * 2 + G4 * 1 + G5 * 2 + G6 * 2 + G7 * 2 + G8 * 1 + G9 * 2 + G10 * 2 + G11 * 1;
 
+result.innerHTML = GPA / 18
+result = GPA
+}
+
+</script>
 </html>
