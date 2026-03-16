@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GPA Calculator</title>
+</head>
+<body>
+    <h1>Grade Point Average Calculator</h1>
+    <form id="gpaCalc">
+        <label for="grades">Enter your grades (comma-separated):</label><br>
+        <input type="text" id="grades" name="grades"><br><br>
+        <input type="button" value="Calculate GPA" onclick="calculateGPA()">
+    </form>
+    <p id="result"></p>
+
+    <script>
+        function calculateGPA() {
+            const gradeInput = document.getElementById('grades').value;
+            const grades = gradeInput.split(',').map(Number);
+            const total = grades.reduce((acc, grade) => acc + grade, 0);
+            const gpa = total / grades.length;
+            document.getElementById('result').innerText = `Your GPA is: ${gpa.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>
